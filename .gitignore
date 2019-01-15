@@ -1,5 +1,6 @@
 *secrets.py*
 uwsgi.sock
+*.png
 
 venv
 __pycache__
