@@ -1,4 +1,5 @@
-*secrets.py
+*secrets.py*
+uwsgi.sock
 
 venv
 __pycache__
