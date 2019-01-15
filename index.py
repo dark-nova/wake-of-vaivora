@@ -1,8 +1,10 @@
 # encoding: utf-8
-from secrets import secret as secret
+import secrets
+import subprocess
 
 def main():
     text = ["Command received"]
+    subprocess.run('whoami')
     return text
 
 def application(environ, start_response):
