@@ -1,9 +1,4 @@
 # encoding: utf-8
-from datetime import date, datetime, timedelta
-from dateutil import parser
-from dateutil.relativedelta import relativedelta
-import sqlite3, calendar
-
 
 def main():
     text = []
@@ -28,10 +23,10 @@ def main():
 
 def application(environ, start_response):
     status = '200 OK'
-    
+
     #output = 'Hello world'
     output = main()
-    
+
     response_headers = [('Content-type', 'text/html; charset=utf-8'),
                         ('Content-Length', str(len('\n'.join(output))))]
 
