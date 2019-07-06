@@ -1,6 +1,7 @@
 *secrets.py*
 uwsgi.sock
-*.png
 
 venv
 __pycache__
+
+*.sublime*
