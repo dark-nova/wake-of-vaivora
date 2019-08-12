@@ -1,8 +1,16 @@
-*secrets.py
-*.sock
+# Sublime Text
+*.sublime-*
 
-venv
-__pycache__
+# WSGI socket file from .ini
+wake.sock
+
+# see config.yaml.example
+*config.yaml
+
+db/*
+*.db
+
+# Python files
+*venv*
+*__pycache__/*
 *.pyc
-
-*.sublime*
