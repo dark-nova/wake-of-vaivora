@@ -1,0 +1,8 @@
+# Rename this file to config.yaml to use the script.
+
+# This is where your Flask app will live. Pick an appropriate URI.
+uri: '/'
+# The service name for your Wings of Vaivora instance to hook with systemd, etc.
+service: 'vaivora'
+# The directory name for your Wings of Vaivora setup, including the venv.
+directory: 'wings-of-vaivora'
