@@ -23,8 +23,14 @@ This code is designed around the following:
 - Python 3.6+
 - Linux
 - `sudo`
-- `systemd` unit files for both **Wake** and **Wings of Vaivora** and `systemctl`
+- `systemd` unit files for both **Wake** and **Wings of Vaivora** and `systemctl` (`*`)
 - `flask`
 - `uWSGI`
 - other [requirements](requirements.txt)
 - (preferable) `nginx` to ultimately serve the page
+
+`*` - I realize that `systemd` can be controversial so should the need arise, I will look into compatibility with `rc.d` and other init-like management tools.
+
+## Disclaimer
+
+This project is not affiliated or endorsed by Tree of Savior or Discord. See [`LICENSE`](LICENSE) for more detail.
