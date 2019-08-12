@@ -1,13 +1,16 @@
 import subprocess
-from flask import Flask, request
 
-import secrets
+import yaml
+from flask import Flask, request
 
 
 app = Flask(__name__)
 
+with open('config.yaml', 'r') as f:
+    conf = yaml.load(f, Loader=yaml.Loader)
+
 # with hints from https://scotch.io/bar-talk/processing-incoming-request-data-in-flask
-@app.route(secrets.URL, methods=['GET', 'POST'])
+@app.route(conf['uri'], methods=['GET', 'POST'])
 def page():
     if request.method == 'GET':
         return """
@@ -25,7 +28,7 @@ def wake():
     try:
         ps = subprocess.Popen(['ps', 'aux'], stdout=subprocess.PIPE)
         piped = subprocess.Popen(
-            ['grep', '{}.*python'.format(secrets.VAIVORA_DIR)],
+            ['grep', '{}.*python'.format(conf['directory'])],
             stdin=ps.stdout,
             stdout=subprocess.PIPE
             )
@@ -43,7 +46,7 @@ def wake():
         # be sure your user has sudo password-less permissions,
         # preferably via sudoers
         result = subprocess.run(
-            ['sudo', 'systemctl', 'restart', secrets.VAIVORA_SERVICE]
+            ['sudo', 'systemctl', 'restart', conf['service']]
             )
         if result.returncode != 0:
             img = 'angery.png'
