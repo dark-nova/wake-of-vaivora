@@ -47,4 +47,4 @@ Ideally, you should also have sudo password-less permissions, preferably via `su
 
 ## Disclaimer
 
-This project is not affiliated or endorsed by Tree of Savior or Discord. See [`LICENSE`](LICENSE) for more detail.
+This project is not affiliated with or endorsed by Tree of Savior or Discord. See [`LICENSE`](LICENSE) for more detail.
