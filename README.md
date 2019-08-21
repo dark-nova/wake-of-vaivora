@@ -13,9 +13,9 @@ This code is designed around the following:
     - `uWSGI`
     - other [requirements](requirements.txt)
 - Linux
-    - `sudo` and `sudoers`
+    - `sudo` and `sudoers` for password-less commands
     - `systemd` unit files for both **Wake** and **Wings of Vaivora** and `systemctl`
-    - (preferable) `nginx` to ultimately serve the page
+    - (optional) `nginx` to serve the page
 
 ⚠ I realize that `systemd` can be controversial so should the need arise, I will look into compatibility with `rc.d` and other init-like management tools.
 
@@ -39,11 +39,11 @@ To set up your configuration, copy [`config.yaml.example`](config.yaml.example) 
 
 If everything is set up correctly, navigate to your page defined by `config.yaml` (`uri`) and click the button. Results below:
 
-- ![OK](OK.png): **success**; Wings of Vaivora should have restarted
-- ![Fail 1](tired.png): **fail**; Wings of Vaivora is already running
-- ![Fail 2](angery.png): **fail**; Wings of Vaivora was not running but could not restart
+- ![Success](success.png): **success**; Wings of Vaivora should have restarted
+- ![Fail 1](failure_already_running.png): **fail**; Wings of Vaivora is already running
+- ![Fail 2](failure_could_not_restart.png): **fail**; Wings of Vaivora was not running but could not restart
 
-Ideally, you should also have sudo password-less permissions, preferably via `sudoers` and the specific command(s).
+Ideally, you should also have `sudo` password-less permissions, preferably via `sudoers` and the specific command(s).
 
 ## Disclaimer
 

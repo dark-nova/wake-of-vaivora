@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [1.2.1] - 2019-08-21
+### Changed
+- Use generic images instead of copyright-able images
+
 ## [1.2] - 2019-08-12
 ### Changed
 - Migrate from `secrets.py` to [`config.yaml`](config.yaml.example) for better settings management; include PyYAML for this
