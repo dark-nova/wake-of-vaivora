@@ -9,6 +9,14 @@ app = Flask(__name__)
 with open('config.yaml', 'r') as f:
     conf = yaml.load(f, Loader=yaml.Loader)
 
+try:
+    with open('images.yaml', 'r') as f:
+        images = yaml.load(f, Loader=yaml.Loader)
+except FileNotFoundError:
+    # Fallback on default
+    with open('images.yaml.example', 'r') as f:
+        images = yaml.load(f, Loader=yaml.Loader)
+
 # with hints from https://scotch.io/bar-talk/processing-incoming-request-data-in-flask
 @app.route(conf['uri'], methods=['GET', 'POST'])
 def page():
@@ -23,7 +31,7 @@ def page():
 
 
 def wake():
-    img = 'OK.png'
+    img = images['success']
 
     try:
         ps = subprocess.Popen(['ps', 'aux'], stdout=subprocess.PIPE)
@@ -41,7 +49,7 @@ def wake():
         process = None
 
     if process:
-        img = 'tired.png'
+        img = images['failure_already_running']
     else:
         # be sure your user has sudo password-less permissions,
         # preferably via sudoers
@@ -49,7 +57,7 @@ def wake():
             ['sudo', 'systemctl', 'restart', conf['service']]
             )
         if result.returncode != 0:
-            img = 'angery.png'
+            img = images['failure_could_not_restart']
     return """
         <img src="{}" style="max-width:100%; height:auto; width:auto\9; /* ie8 */" />
         """.format(img)
