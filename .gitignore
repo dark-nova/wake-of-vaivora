@@ -9,6 +9,9 @@ wake.sock
 # see images.yaml.example
 *images.yaml
 
+*.png
+!(success,failure_already_running,failure_could_not_start).png
+
 db/*
 *.db
 
