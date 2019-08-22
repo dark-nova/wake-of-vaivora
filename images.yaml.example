@@ -1,0 +1,6 @@
+# (optional) Rename or copy this file to images.yaml.
+# If you want to use custom images, you must create images.yaml.
+
+success: 'success.png'
+failure_already_running: 'failure_already_running.png'
+failure_could_not_restart: 'failure_could_not_restart.png'

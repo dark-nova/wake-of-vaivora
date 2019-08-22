@@ -6,6 +6,8 @@ wake.sock
 
 # see config.yaml.example
 *config.yaml
+# see images.yaml.example
+*images.yaml
 
 db/*
 *.db
